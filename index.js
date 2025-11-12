@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 app.get('/jokes/count', function (req, res) {
   const count = jokes.length;
-  index.json({ count });
+  res.json({ count });
 });
 
 
