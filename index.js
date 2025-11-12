@@ -12,8 +12,14 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Try /random_joke, /random_ten, /jokes/random, or /jokes/ten , /jokes/random/<any-number>');
+  res.send('Nyt kyllä vitsin murjaisit kokeile /jokes/count');
 });
+
+app.get('/jokes/count', function (req, res) {
+  const count = jokes.length;
+  res.json({ count });
+});
+
 
 app.get('/ping', (req, res) => {
   res.send('pong');
